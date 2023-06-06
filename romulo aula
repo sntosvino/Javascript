@@ -1,0 +1,228 @@
+p{
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+}
+
+table,td{
+    border: 1px;
+    border-style: ridge;
+    border-color: green;
+    margin: auto;
+    margin-top: 30px;
+}
+
+td{
+    text-align: center;
+    width: 46px;
+    height: 44px;
+    font-size: 17px;
+}
+
+#palavra{
+    background-color: #00ff22;
+}
+ 
+html 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça-Palavras-do-rômulo-desenvolvido-na-aula-de-aplicações-web-professora-sandra</title>
+</head>
+
+<body>
+    
+</body>
+
+</html>
+
+java
+matriz = new Array;
+
+matriz = [
+["B", "A", "I", "M", "O", "R", "E", "D", "K", "O", "L", "P", "D", "K"], 
+["T", "R", "E", "M", "B", "I", "C", "M", "L", "I", "N", "Q", "S", "S"], 
+["J", "C", "B", "H", "C", "I", "B", "Ã", "O", "N", "J", "R", "L", "E"], 
+["C", "H", "X", "V", "E", "U", "S", "Q", "W", "C", "C", "B", "B", "T"], 
+["A", "O", "L", "C", "R", "S", "E", "O", "Ç", "A", "A", "M", "O", "Q"], 
+["P", "A", "R", "M", "A", "U", "B", "Y", "W", "O", "J", "Ç", "L", "F"], 
+["V", "R", "F", "F", "M", "J", "P", "C", "B", "P", "A", "Q", "I", "T"], 
+["M", "O", "O", "K", "I", "O", "L", "O", "D", "K", "X", "B", "V", "K"],
+["A", "H", "F", "K", "C", "T", "B", "N", "M", "I", "B", "Y", "I", "J"],
+["X", "V", "R", "C", "A", "X", "I", "A", "S", "Ç", "W", "I", "A", "K"],
+["B", "N", "V", "M", "C", "L", "O", "D", "N", "Y", "P", "G", "K", "I"],
+["C", "B", "E", "N", "F", "I", "C", "A", "C", "U", "K", "A", "C", "W"], 
+["G", "C", "E", "V", "G", "U", "K", "D", "W", "P", "T", "G", "E", "O"], 
+["B", "V", "A", "Q", "A", "M", "O", "U", "Q", "B", "L", "O", "Q", "X"]];
+
+document.write("<p>Caça Palavras</p><hr>");
+
+document.write("<table>");
+for (x = 0; x < 14; x++) {
+    document.write("<tr>");
+    for (y = 0; y < 14; y++) {
+        if (x == 0 && y > 0 && y < 7 || x == 1 && y > -1 && y < 4 || x == 2 && y > 3 && y < 9 || x == 5 && y > -1 && y < 5 || x == 11 && y > 0 && y < 8 || x == 9 && y > 2 && y < 9 || y == 1 && x > -1 && x < 8 || y == 10 && x > 3 && x < 8 || y == 4 && x > 2 && x < 10 || y == 12 && x > 2 && x < 10) {
+            document.write("<td id='palavra'>" + matriz[x][y] + "</td>");
+        }
+        else {
+            document.write("<td>" + matriz[x][y] + "</td>");
+        }
+    }
+    document.write("</tr>");
+};
+document.write("</table>");
+
+jogo da velha
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>JOGO DA VELHA</h1>
+    <hr />
+    <div class="game">
+      <button data-i="1"></button>
+      <button data-i="2"></button>
+      <button data-i="3"></button>
+      <button data-i="4"></button>
+      <button data-i="5"></button>
+      <button data-i="6"></button>
+      <button data-i="7"></button>
+      <button data-i="8"></button>
+      <button data-i="9"></button>
+    </div>
+    <h2 class="currentPlayer"></h2>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+
+ css
+ 
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00ffff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+hr {
+  font-weight: bold;
+  height: 5px;
+  background: blue;
+  margin-bottom: 10px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.game button {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 50px;
+  background: #A020F0;
+}
+
+
+java
+
+const currentPlayer = document.querySelector(".currentPlayer");
+
+let selected;
+let player = "X";
+
+let positions = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9],
+  [1, 5, 9],
+  [3, 5, 7],
+];
+
+function init() {
+  selected = [];
+
+  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
+
+  document.querySelectorAll(".game button").forEach((item) => {
+    item.innerHTML = "";
+    item.addEventListener("click", newMove);
+  });
+}
+
+init();
+
+function newMove(e) {
+  const index = e.target.getAttribute("data-i");
+  e.target.innerHTML = player;
+  e.target.removeEventListener("click", newMove);
+  selected[index] = player;
+
+  setTimeout(() => {
+    check();
+  }, [100]);
+
+  player = player === "X" ? "O" : "X";
+  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
+}
+
+function check() {
+  let playerLastMove = player === "X" ? "O" : "X";
+
+  const items = selected
+    .map((item, i) => [item, i])
+    .filter((item) => item[0] === playerLastMove)
+    .map((item) => item[1]);
+
+  for (pos of positions) {
+    if (pos.every((item) => items.includes(item))) {
+      alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
+      init();
+      return;
+    }
+  }
+
+  if (selected.filter((item) => item).length === 9) {
+    alert("DEU EMPATE!");
+    init();
+    return;
+  }
+}
